@@ -1,0 +1,21 @@
+{
+  "name": "floxim/composer-installer",
+  "description": "Install Floxim modules and themes.",
+  "type": "composer-plugin",
+  "license": "MIT",
+  "homepage": "https://github.com/Floxim/floxim-composer",
+  "autoload": {
+    "psr-4": {
+      "Floxim\\Composer\\": ""
+    }
+  },
+  "extra": {
+    "class": "Floxim\\Composer\\InstallerPlugin"
+  },
+  "require": {
+    "composer-plugin-api": "1.0.0"
+  },
+  "require-dev": {
+    "composer/composer": "1.0.*@dev"
+  }
+}
