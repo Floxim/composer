@@ -1,5 +1,5 @@
 {
-  "name": "Floxim/Composer-Installer",
+  "name": "floxim/composer",
   "description": "Install Floxim modules and themes.",
   "type": "composer-plugin",
   "license": "MIT",
