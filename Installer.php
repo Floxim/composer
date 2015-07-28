@@ -33,6 +33,7 @@ class Installer extends LibraryInstaller
                 break;
             case 'modules':
                 $res = 'module/'.$vendor.$name;
+                break;
             default:
                 $res = $short_type.'/'.$vendor.'/'.$name;
                 break;
