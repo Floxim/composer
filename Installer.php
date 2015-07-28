@@ -10,6 +10,7 @@ class Installer extends LibraryInstaller
    
     protected $types = array(
         'floxim-module',
+        'floxim-modules',
         'floxim-theme',
         'floxim-themes'
     );
@@ -25,11 +26,16 @@ class Installer extends LibraryInstaller
         $vendor = self::camelize($vendor);
         $name = self::camelize($name);
         $name = preg_replace("~^Floxim~", '', $name);
-        $name = preg_replace("~^Module|Themes?~", '', $name);
-        if ($short_type === 'themes') {
-            $res = 'theme/'.$vendor.$name;    
-        } else {
-            $res = $short_type.'/'.$vendor.'/'.$name;
+        $name = preg_replace("~^Modules?|Themes?~", '', $name);
+        switch ($short_type) {
+            case 'themes':
+                $res = 'theme/'.$vendor.$name;
+                break;
+            case 'modules':
+                $res = 'module/'.$vendor.$name;
+            default:
+                $res = $short_type.'/'.$vendor.'/'.$name;
+                break;
         }
         return $res;
     }
